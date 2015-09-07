@@ -1,0 +1,165 @@
+Migrating from full VM
+----------------------
+You should also back up your .gitconfig file from the VM. This is mainly so that you can retrieve the exact username and email used for your commits and apply to the Mac setup.
+
+
+Install Software
+-----------------
+
+Xcode (get via the App store. You will need an Apple ID)
+  - Install command line tools + iOS simulators
+
+
+
+nodeJs
+  - install from nodejs.org or via nvm (which is the latest recommended way) see https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps
+
+Grunt http://gruntjs.com/getting-started
+  - install CL tools globally: npm install -g grunt-cli
+
+Compass/sass
+  - gem install sass (may need to use sudo)
+
+Homebrew
+  - install git
+
+[
+ could install homebrew cask to then install some of the apps below
+ - brew install caskroom/cask/brew-cask
+ - brew tap caskroom/versions (allows older versions to be installed)
+
+  virtualbox version 4.3.20 (there's a stability issue in later versions up to 4.3.24 at least)
+    - http://download.virtualbox.org/virtualbox/4.3.20/VirtualBox-4.3.20-96996-OSX.dmg
+
+  Vagrant
+    - http://www.vagrantup.com/downloads.html
+    - after installing install the vbguest plugin: vagrant plugin install vagrant-vbguest
+]
+
+
+Optional Software
+------------------
+bash aliases
+git aliases
+IE vms (modern.ie)
+iOS simulator (install from Xcode)
+GitK visual + color log
+https://thomashunter.name/blog/visual-git-history-log-in-terminal-window/
+
+
+Set Up Steps
+------------
+
+Pre-requisites:
+  i) Bitbucket account and ssh key created and added to BitBucket
+	- create a new key (or migrate an existing one) and register with Bitbucket)
+	  https://help.github.com/articles/generating-ssh-keys/
+	  Or,
+	  http://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
+
+1) Install Xcode: https://developer.apple.com/xcode - you will need an Apple ID
+
+2) Install nodeJs: install from http://nodejs.org or via nvm (which is the latest recommended way) see https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps
+
+3) Install Grunt: npm install -g grunt-cli (see http://gruntjs.com/getting-started for more info)
+
+4) Install Compass/sass: gem install sass (may need to use sudo)
+
+5) Install homebrew: http://brew.sh/
+
+6) Run: brew doctor and resolve any problems before continuing
+
+7) Install cask: brew install cask
+
+8) Install git: brew install git
+
+9) Create the project directories: mkdir -p ~/projects/akzo_flourish && cd $_
+
+10) In the akzo_flourish directory check out the projects (columbus, ecom, flourish, flourish_basecoat, flourish_tests, krypton) e.g. git clone ...
+
+11) Install bash_profile etc: see "Setup hosts, bash_profile and git config" 
+
+12) Quit and re-open Terminal
+
+13) Change directory to columbus/boxes/vagrant/gusteau: goto_gusteau or cd $G
+
+14) vagrant up
+
+15) vagrant ssh
+
+16) In the vm change directory to flourish toolbelt: cd $T
+
+17) Migrate krypton content: ./migrate.sh
+
+18) Start krypton: ./start-krypton.sh
+
+19) Start flourish: ./start-flourish.sh
+
+20) In a browser on the mac go to flourish: http://english.local.deco-columbus.com
+
+21) In a browser on the mac go to smc (krypton): http://192.168.33.60:3001/index.html#!articles 
+
+
+Setup hosts, bash_profile and git config
+----------------------------------------
+1) Mac (or host machine) Hosts file /etc/hosts add:
+   192.168.33.60 english.local.deco-columbus.com
+   192.168.33.60 flourish.local.deco-columbus.com
+
+2) .bash_profile: copy bash_profile.txt to ~/.bash_profile
+
+3) Git config:
+  i) copy gitconfig.txt to ~/.gitconfig
+  ii) Edit the .gitconfig and update the user details
+
+4) Git diff tool: https://thomashunter.name/blog/set-opendiff-filemerge-as-your-git-diff-tool-on-os-x/
+
+5) Gitk visual + color log: https://thomashunter.name/blog/visual-git-history-log-in-terminal-window/
+
+6) Git branch name auto complete:
+  i) curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+  ii) Make executable: chmod -X ~/.git-completion.bash
+  iii) Ensure that the following is in .bash_profile: test -f ~/.git-completion.bash && . $_
+
+
+
+Troubleshooting
+---------------
+PhantomJS version should be 1.9.0 or later
+
+run npm install in vm (especially if you get: phantomjs: Syntax error: Unterminated quoted string')
+
+
+https://www.virtualbox.org/wiki/Core_dump
+https://www.virtualbox.org/ticket/13874
+http://download.virtualbox.org/virtualbox/4.3.20/VirtualBox-4.3.20-96996-OSX.dmg
+
+- Vagrant performance nfs
+ - if changing path also update /etc/exports
+
+
+modern.ie
+---------
+Add gusteau private network ip to hosts file (c:\windows\system32\drivers\etc\hosts)
+Access host localhost on 10.0.2.2
+Extend Windows expiration: slmgr /rearm
+
+
+node_modules
+------------
+$ rm -r node_modules
+$ npm cache clean
+$ npm install
+
+
+
+Git branch name
+----------------
+Add to .bash_profile
+
+# Git branch in prompt.
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
