@@ -1,0 +1,14 @@
+#
+# Directory aliases
+#
+alias goto_projects="cd ~/projects"
+export proj="goto_projects"
+
+#
+# Alternative Shortcuts
+#
+# export PROJ_HOME="$HOME/projects"
+# export T="$PROJ_HOME/toolbelt"
+
+# alias sas='$T/show-app-status.sh'
+# End Alternative Shortcuts

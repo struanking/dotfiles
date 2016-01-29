@@ -3,34 +3,36 @@
 
 # Install native apps
 apps=(
-    #alfred
     #airdisplay
-    #appcleaner
-    breach
+    appcleaner
+    atom
+    #breach
     caffeine
-    charles
-    #calibre
+    #charles
+    calibre
     cheatsheet
-    cocktail
+    #cocktail
     #diffmerge
-disk-inventory-x
-    #dropbox
-    #evernote
-    #firefox
+    #disk-inventory-x
+    dropbox
+    evernote
+    firefox
     gitup
-gyazo
-    #google-chrome
+    google-chrome
     #google-chrome-canary
+    chrome-remote-desktop-host
     #hazel
     #hipchat
-imagealpha
-    #imageoptim
-    #iterm2
-    little-snitch
+    #imagealpha
+    imageoptim
+    iterm2
+    kindle
+    #little-snitch
     nvalt
     #opera
     #phantomjs
     #rescuetime
+    #screenflow
     spectacle
     #sublime-text3
     #torbrowser
@@ -44,7 +46,7 @@ brew cask install --appdir=/Applications ${apps[@]}  2> /dev/null
 
 
 # Enable casks in Alfred
-brew cask alfred link
+#brew cask alfred link
 
 
 # Remove outdated versions from the cellar
@@ -52,5 +54,5 @@ brew cask cleanup
 
 
 # Vagrant plugins, apply here since brew-cask installs vagrant
-vagrant plugin install vagrant-vbguest
-vagrant plugin install vagrant-digitalocean
+#vagrant plugin install vagrant-vbguest
+#vagrant plugin install vagrant-digitalocean
