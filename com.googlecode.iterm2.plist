@@ -726,9 +726,9 @@
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.59833014011383057</real>
+				<real>0.7449486255645752</real>
 				<key>Green Component</key>
-				<real>0.12036731094121933</real>
+				<real>0.30292370915412903</real>
 				<key>Red Component</key>
 				<real>0.83361190557479858</real>
 			</dict>
@@ -1108,11 +1108,11 @@
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.26775860786437988</real>
+				<real>0.75137484073638916</real>
 				<key>Green Component</key>
-				<real>0.60498249530792236</real>
+				<real>0.70523834228515625</real>
 				<key>Red Component</key>
-				<real>0.42174211144447327</real>
+				<real>0.35632973909378052</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
