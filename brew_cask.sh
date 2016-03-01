@@ -10,6 +10,7 @@ apps=(
     caffeine
     #charles
     calibre
+    casperjs --devel
     cheatsheet
     #cocktail
     #diffmerge
@@ -30,11 +31,12 @@ apps=(
     #little-snitch
     nvalt
     #opera
-    #phantomjs
+    phantomjs
     #rescuetime
     #screenflow
     spectacle
     #sublime-text3
+    the-unarchiver
     #torbrowser
     #vagrant
     #virtualbox432096996
