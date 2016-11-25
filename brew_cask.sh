@@ -18,6 +18,7 @@ apps=(
     kindle
     little-snitch
     moom
+    nylas-n1
     nvalt
     #rescuetime
     #remote-desktop-connection
