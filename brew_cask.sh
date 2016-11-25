@@ -3,45 +3,72 @@
 
 # Install native apps
 apps=(
-    #airdisplay
-    appcleaner
+    # Code Editors
     atom
-    #breach
-    caffeine
-    #charles
+    #sublime-text3
+    #
+    # Apps
     calibre
-    casperjs --devel
-    cheatsheet
-    #cocktail
-    #diffmerge
-    #disk-inventory-x
+    chrome-remote-desktop-host
     dropbox
     evernote
-    firefox
-    gitup
-    google-chrome
-    #google-chrome-canary
-    chrome-remote-desktop-host
-    #hazel
-    #hipchat
-    #imagealpha
+    hyper
     imageoptim
     iterm2
     kindle
-    #little-snitch
+    little-snitch
+    moom
     nvalt
-    #opera
-    phantomjs
     #rescuetime
-    #screenflow
-    spectacle
-    #sublime-text3
-    the-unarchiver
-    #torbrowser
+    #remote-desktop-connection
     #vagrant
-    #virtualbox432096996
+    virtualbox
     vlc
-    #webstorm
+    #
+    # Browsers
+    brave
+    firefox
+    google-chrome
+    #google-chrome-canary
+    opera-beta
+    torbrowser
+    #
+    # Dev Tools
+    #charles
+    cheatsheet
+    gitup
+    #phantomjs
+    #
+    # OS Enhancements
+    a-better-finder-rename
+    #airdisplay
+    appcleaner
+    bettertouchtool
+    caffeine
+    cocktail
+    #diffmerge
+    #disk-inventory-x
+    #hazel
+    omnidisksweeper
+    the-unarchiver
+    todoist
+    #totalfinder
+    the-unarchiver
+    spectacle
+    #teamspeak
+    #
+    # Games
+    starrealms
+    #
+    # Quick Look Plugins
+    suspicious-package
+    betterzipql
+    qlmarkdown
+    quicklook-csv
+    quicklook-json
+    quicknfo
+    webpquicklook
+    webpquicklook
 )
 
 brew cask install --appdir=/Applications ${apps[@]}  2> /dev/null
