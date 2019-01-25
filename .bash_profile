@@ -5,12 +5,13 @@ for file in ~/.{bash_prompt,aliases,functions}; do
 done
 unset file
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
 test -f ~/.git-completion.bash && . $_
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PS1="\$ "

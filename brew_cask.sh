@@ -25,6 +25,7 @@ apps=(
     #vagrant
     virtualbox
     vlc
+    youtube-dl
     #
     # Browsers
     brave

@@ -6,20 +6,20 @@
 #./brew_cask.sh
 
 # NVM setup
-mkdir ~/.nvm
+#mkdir ~/.nvm
 #echo "source $(brew --prefix nvm)/nvm.sh" >> ~/.bash_profile
 
 # Bash settings
 cp .aliases ~/
 cp .bash_profile ~/
-cp .bash_prompt ~/
+#cp .bash_prompt ~/
 cp .bashrc ~/
 cp .functions ~/
 
 # Git settings
 cp .git-completion.bash ~/
 cp .gitconfig ~/
-cp git-diff.sh ~/
+#cp git-diff.sh ~/
 
 chmod +x ~/.git-completion.bash
 
@@ -27,8 +27,8 @@ chmod +x ~/.git-completion.bash
 cp ./fonts/*.* ~/Library/Fonts
 
 # OS X customisations
-chmod +x .osx
-./.osx
+chmod +x .macos
+./.macos
 
 # https://github.com/rupa/z
 # z, oh how i love you
@@ -41,4 +41,4 @@ chmod +x ~/code/z/z.sh
 
 # SSH key for github
 # https://help.github.com/articles/generating-an-ssh-key/
-ssh-keygen -t rsa -b 4096 -C "struan.king@gmail.com"
+#ssh-keygen -t rsa -b 4096 -C "struan.king@gmail.com"

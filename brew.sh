@@ -8,20 +8,20 @@ brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-#brew install coreutils
+brew install coreutils
 # Install some other useful utilities like `sponge`
 #brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-#brew install findutils
+brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`
-#brew install gnu-sed --default-names
+brew install gnu-sed --default-names
 
 
 # Install wget with IRI support
-#brew install wget --enable-iri
+brew install wget --enable-iri
 
 # Install more recent versions of some OS X tools
-#brew install vim --override-system-vi
+brew install vim --override-system-vi
 #brew install homebrew/dupes/grep
 #brew install homebrew/dupes/screen
 
@@ -31,8 +31,8 @@ brew upgrade
 # Install other useful binaries
 #brew install git
 #brew install node # This installs `npm` too using the recommended installation method
-brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
+#brew install caskroom/cask/brew-cask
+#brew tap caskroom/versions
 #brew install nvm
 #brew install tree
 
