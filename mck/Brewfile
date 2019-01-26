@@ -1,0 +1,43 @@
+# https://github.com/Homebrew/homebrew-bundle
+# specify a directory to install
+cask_args appdir: '/Applications'
+
+# install packages
+tap 'caskroom/homebrew-cask' || true
+tap 'caskroom/versions' || true
+brew 'git'
+brew 'bash-completion'
+brew 'tree'
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
+
+# Casks
+cask 'appcleaner'
+cask 'caffeine'
+cask 'dropbox'
+cask 'evernote'
+cask 'firefox'
+cask 'firefox-developer-edition'
+cask 'fluid'
+cask 'flux'
+cask 'gitup'
+#cask 'google-chrome'
+cask 'hyper'
+cask 'imageoptim'
+cask 'keepassxc'
+cask 'macdown' #markdown viewer
+#cask 'notion'
+cask 'opera'
+cask 'spectacle'
+cask 'virtualbox'
+cask 'vlc'
+cask 'xquartz'
+cask 'zeplin'
+
+# Quick Look Plugins
+cask 'qlmarkdown'
+cask 'quicklook-csv'
+cask 'quicklook-json'
+cask 'quicknfo'
+cask 'webpquicklook'

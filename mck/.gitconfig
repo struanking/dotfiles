@@ -1,0 +1,57 @@
+[user]
+  email = struan.king@gmail.com
+  name = Struan King
+
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status -s
+
+  # Show the diff between the latest commit and the current state
+  d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+  # `git di $number` shows the diff between the state `$number` revisions ago and the current state
+  di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+
+  last = log -1 HEAD
+
+  lg = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(blue)<%an>%C(reset)' --abbrev-commit --date=relative
+
+[core]
+  # Use custom `.gitignore` and `.gitattributes`
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+
+
+[color]
+  ui = always
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold # line info
+  old = red # deletions
+  new = green # additions
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[push]
+  default = upstream
+
+[merge]
+    tool = opendiff
+
+external = /Users/Struan/git-diff.sh
