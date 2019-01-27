@@ -31,6 +31,7 @@ cask 'macdown' #markdown viewer
 cask 'opera'
 cask 'spectacle'
 cask 'virtualbox'
+cask 'visual-studio-code'
 cask 'vlc'
 cask 'xquartz'
 cask 'zeplin'

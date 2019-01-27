@@ -15,6 +15,7 @@ chmod +x ~/.git-completion.bash
 
 # Install Fonts - if this doesn't work then open each font and "Install" manually
 cp ./fonts/*.* ~/Library/Fonts
+cp ./fonts/FiraCode/*.* ~/Library/Fonts
 
 # zsh - installed via Brewfile
 # Make zsh the default shell
@@ -22,6 +23,9 @@ chsh -s $(which zsh)
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Pure prompt
+npm install --global pure-prompt
 
 # NVM setup - do after zsh
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
